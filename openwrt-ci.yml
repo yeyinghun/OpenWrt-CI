@@ -53,6 +53,10 @@ jobs:
 
           df -h
 
+      - name: git ssr puls
+        run: |
+          sed -i '5s/\#src-git/src-git/g' feeds.conf.default
+
       - name: Update feeds
         run: |
           ./scripts/feeds update -a
